@@ -29,7 +29,7 @@ const CreateNewJob = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:3000/api/newjob/create', {
+      const response = await fetch('https://job-portal-application-backend-1.onrender.com/api/newjob/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
