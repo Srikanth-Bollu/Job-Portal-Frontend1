@@ -11,7 +11,7 @@ import { JOB_LOAD_FAIL,
 export const jobLoadAction = (pageNumber, keyword = '', cat = '', location = '') => async (dispatch) => {
     dispatch({ type: JOB_LOAD_REQUEST });
     try {
-        const { data } = await axios.get(`https://job-portal-application-backend-1.onrender.com/api/jobs/show/?pageNumber=${pageNumber}&keyword=${keyword}&cat=${cat}&location=${location}`)
+        const { data } = await axios.get(`https://job-portal-application-backend1.onrender.com/api/jobs/show/?pageNumber=${pageNumber}&keyword=${keyword}&cat=${cat}&location=${location}`)
         dispatch({
             type: JOB_LOAD_SUCCESS,
             payload: data
@@ -29,7 +29,7 @@ export const jobLoadAction = (pageNumber, keyword = '', cat = '', location = '')
 export const jobLoadSingleAction = (id) => async (dispatch) => {
     dispatch({ type: JOB_LOAD_SINGLE_REQUEST });
     try {
-        const { data } = await axios.get(`https://job-portal-application-backend-1.onrender.com/api/job/${id}`)
+        const { data } = await axios.get(`https://job-portal-application-backend1.onrender.com/api/job/${id}`)
         dispatch({
             type: JOB_LOAD_SINGLE_SUCCESS,
             payload: data

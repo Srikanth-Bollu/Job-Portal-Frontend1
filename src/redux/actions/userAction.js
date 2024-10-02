@@ -26,7 +26,7 @@ import {
 export const userSignInAction = (user) => async (dispatch) => {
     dispatch({ type: USER_SIGNIN_REQUEST });
     try {
-        const { data } = await axios.post("https://job-portal-application-backend-1.onrender.com/api/signin", user);
+        const { data } = await axios.post("https://job-portal-application-backend1.onrender.com/api/signin", user);
         localStorage.setItem('userInfo', JSON.stringify(data));
         dispatch({
             type: USER_SIGNIN_SUCCESS,
@@ -46,7 +46,7 @@ export const userSignInAction = (user) => async (dispatch) => {
 export const userLogoutAction = (user) => async (dispatch) => {
     dispatch({ type: USER_LOGOUT_REQUEST });
     try {
-        const { data } = await axios.get("https://job-portal-application-backend-1.onrender.com/api/logout");
+        const { data } = await axios.get("https://job-portal-application-backend1.onrender.com/api/logout");
         localStorage.removeItem('userInfo');
         dispatch({
             type: USER_LOGOUT_SUCCESS,
@@ -68,7 +68,7 @@ export const userLogoutAction = (user) => async (dispatch) => {
 export const userProfileAction = (user) => async (dispatch) => {
     dispatch({ type: USER_LOAD_REQUEST });
     try {
-        const { data } = await axios.get("https://job-portal-application-backend-1.onrender.com/api/me");   
+        const { data } = await axios.get("https://job-portal-application-backend1.onrender.com/api/me");   
         dispatch({
             type: USER_LOAD_SUCCESS,
             payload: data
@@ -87,7 +87,7 @@ export const userProfileAction = (user) => async (dispatch) => {
 export const allUserAction = () => async (dispatch) => {
     dispatch({ type: ALL_USER_LOAD_REQUEST });
     try {
-        const { data } = await axios.get("https://job-portal-application-backend-1.onrender.com/api/allusers");
+        const { data } = await axios.get("https://job-portal-application-backend1.onrender.com/api/allusers");
         dispatch({
             type: ALL_USER_LOAD_SUCCESS,
             payload: data
@@ -105,7 +105,7 @@ export const allUserAction = () => async (dispatch) => {
 export const userApplyJobAction = (job) => async (dispatch) => {
     dispatch({ type: USER_APPLY_JOB_REQUEST });
     try {
-        const { data } = await axios.post("https://job-portal-application-backend-1.onrender.com/api/user/jobhistory", job);
+        const { data } = await axios.post("https://job-portal-application-backend1.onrender.com/api/user/jobhistory", job);
 
         dispatch({
             type: USER_APPLY_JOB_SUCCESS,
@@ -129,7 +129,7 @@ export const userSignUpAction = (userData) => async (dispatch) => {
         dispatch({ type: USER_SIGNUP_REQUEST });
 
         // API call to sign-up endpoint
-        const response = await fetch('https://job-portal-application-backend-1.onrender.com/api/signup', {
+        const response = await fetch('https://job-portal-application-backend1.onrender.com/api/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

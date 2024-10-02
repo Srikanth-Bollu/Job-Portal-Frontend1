@@ -49,8 +49,10 @@ const Navbar = () => {
         const logOutUser = () => {
             dispatch(userLogoutAction());
             // window.location.reload(true);
-            navigate('/')
+            navigate('/login')
         }
+
+        
 
     return (
         <AppBar position="static">
@@ -75,7 +77,6 @@ const Navbar = () => {
                     >
                         JOB PORTAL
                     </Typography>
-
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -165,7 +166,7 @@ const Navbar = () => {
                             </MenuItem>
 
                             {/* <MenuItem onClick={handleCloseUserMenu}>
-                                <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.primary.main }} to="/">LogOut</Link></Typography>
+                                <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.primary.main }} to="/login">LogOut</Link></Typography>
                             </MenuItem> */}
 
                             <MenuItem onClick={logOutUser}>
